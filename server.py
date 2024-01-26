@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def get_ip():
     ip = socket.gethostbyname(socket.gethostname())
-    return ip
+    return str(ip)
 
 @app.route('/', methods=['POST'])
 def start_SC():
@@ -16,4 +16,4 @@ def start_SC():
     return jsonify({'message': 'Process stress CPU.'})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host='0.0.0.0')
