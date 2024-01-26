@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def get_ip():
     ip = socket.gethostbyname(socket.gethostname())
-    return str(ip)
+    return ip
 
 @app.route('/', methods=['POST'])
 def start_SC():
